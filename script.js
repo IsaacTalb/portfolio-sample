@@ -24,3 +24,30 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 });
 
+document.getElementById("contact").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const serviceID = "service_otsuy9g";
+    const templateID = "template_m3nqbgq";
+    const userID = "ZxcK7uqCQqYWEKNiz";
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    const data = {
+        name: formData.get("name"),
+        email: formData.get("email"),
+        message: formData.get("message")
+    };
+
+    emailjs.send(serviceID, templateID, data, userID)
+        .then(() => {
+            form.reset();
+            alert("Your message has been sent successfully!");
+        })
+        .catch((error) => {
+            console.error("Error sending email:", error);
+            alert("An error occurred while sending the email. Please try again later.");
+        });
+});
+
