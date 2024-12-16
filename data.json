@@ -1,14 +1,20 @@
 {
     "projects": [
         {
-            "title": "Project 1",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta sit voluptatibus debitis. Illo illum nulla omnis assumenda soluta. Quibusdam, tempore?",
-            "link": "#"
+            "title": "Professional Portfolio Website",
+            "description": "A responsive website built with HTML, CSS, and JavaScript that showcases my skills and experience as a web developer.",
+            "link": "https://isaac.duckcloud.info"
         },
         {
-            "title": "Project 2",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta sit voluptatibus debitis. Illo illum nulla omnis assumenda soluta. Quibusdam, tempore?",
-            "link": "#"
+            "title": "Ecommerce",
+            "description": "A full-stack e-commerce application built with Node.js, Express, and MongoDB that allows users to purchase products online.",
+            "link": "https://commerce.duckcloud.info"
+        },
+        {
+            "title": "POS system",
+            "description": "A point-of-sale system built with Python and the Django framework that allows users to manage inventory and process transactions.",
+            "link": "https://pos.duckcloud.info"
         }
     ]
 }
+
