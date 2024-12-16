@@ -24,15 +24,23 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 });
 
-document.getElementById("contact").addEventListener("submit", function(e) {
+emailjs.init("ZxcK7uqCQqYWEKNiz");
+
+document.getElementById("contact-form").addEventListener("submit", function(e) {
     e.preventDefault();
 
     const serviceID = "service_otsuy9g";
     const templateID = "template_m3nqbgq";
-    const userID = "ZxcK7uqCQqYWEKNiz";
+    const publicKey = "ZxcK7uqCQqYWEKNiz";
 
     const form = e.target;
     const formData = new FormData(form);
+
+    // status of loading message
+
+    const status = document.getElementById("status");
+        status.style.display = "block";
+        status.textContent = "Sending...";
 
     const data = {
         name: formData.get("name"),
@@ -40,14 +48,17 @@ document.getElementById("contact").addEventListener("submit", function(e) {
         message: formData.get("message")
     };
 
-    emailjs.send(serviceID, templateID, data, userID)
+    emailjs.send(serviceID, templateID, data, publicKey)
         .then(() => {
+            status.textContent = "Your message has been sent successfully!";
+            status.style.color = "green";
+
             form.reset();
-            alert("Your message has been sent successfully!");
         })
         .catch((error) => {
             console.error("Error sending email:", error);
-            alert("An error occurred while sending the email. Please try again later.");
+            status.textContent = "An error occurred while sending the email. Please try again later.";
+            status.style.color = "red";
         });
 });
 
